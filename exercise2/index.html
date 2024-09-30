@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>menyimpan dan mengambil data dari local storage</h2>
+<hr>
+<p id="txt-name"></p>
+<p id="txt-age"></p>
+<p id="txt-city"></p>
+
+<script>
+    const myObj = { name: "Audrey Sharon Joyful Bambulu", age: 20, city: "Tomohon city"};
+    const myJSON = JSON.stringify(myObj);
+    localStorage.setItem("testJSON", myJSON);
+
+    console.log(myJSON);
+
+    let text = localStorage.getItem("testJSON");
+    let obj = JSON.parse(text);
+    document.getElementById("txt-name").innerHTML = "my name is "+obj.name;
+    document.getElementById("txt-age").innerHTML = "I am "+obj.age+" year old.";
+    document.getElementById("txt-city").innerHTML = "my name is "+obj.city+".";
+</script>
+</body>
+</html>
